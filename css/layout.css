@@ -103,6 +103,11 @@
   order: 2;
 }
 
+/* AI Chat Hub 一图为主，给媒体侧略多宽度，便于看清界面内容 */
+.product.reverse {
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
 .product-tag {
   display: inline-flex;
   align-items: center;
