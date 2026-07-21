@@ -1,0 +1,260 @@
+/* =====================================================================
+   layout.css — 首屏 / 产品展示 / 博客 / 装饰
+   ===================================================================== */
+
+/* ---------- 首屏 Hero ---------- */
+.hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 90px) 0 80px;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text-strong);
+}
+
+.hero p.lead {
+  margin: 22px 0 32px;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  max-width: 520px;
+}
+
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Hero 视觉：漂浮设备 + 光环 */
+.hero-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 360px;
+}
+
+.hero-orb {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: var(--gradient);
+  filter: blur(60px);
+  opacity: 0.55;
+}
+
+.hero-device {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  transform: rotate(-2deg);
+}
+
+/* 装饰圆点 */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.4;
+  background: var(--gradient);
+  z-index: -1;
+}
+.blob.b1 { width: 260px; height: 260px; top: -60px; left: -40px; }
+.blob.b2 { width: 200px; height: 200px; bottom: -40px; right: 6%; }
+
+/* ---------- 产品展示（Z 字形交错布局） ---------- */
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.product + .product {
+  margin-top: 100px;
+}
+
+.product.reverse .product-media {
+  order: 2;
+}
+
+.product-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 999px;
+  margin-bottom: 18px;
+}
+
+.product h3 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: var(--text-strong);
+  line-height: 1.15;
+}
+
+.product .desc {
+  margin: 16px 0 24px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* 功能列表 */
+.feature-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.feature {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.feature .ic {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: var(--gradient);
+  color: var(--accent-contrast);
+  font-size: 1rem;
+}
+
+.feature .ft-title {
+  font-weight: 600;
+  color: var(--text-strong);
+  font-size: 0.95rem;
+}
+
+.feature .ft-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* 截图画廊 */
+.shots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.shot {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+
+.shot:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.shot img {
+  width: 100%;
+  height: auto;
+}
+
+.shot.wide {
+  grid-column: 1 / -1;
+}
+
+/* 产品媒体（AI Hub 用 SVG 插画） */
+.media-frame {
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  overflow: hidden;
+}
+
+.media-frame img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+}
+
+/* ---------- 博客文章（轻量占位，呼应"博客"定位） ---------- */
+.posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.35s var(--ease);
+}
+
+.post:hover {
+  transform: translateY(-6px);
+}
+
+.post .post-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.post h4 {
+  font-size: 1.15rem;
+  color: var(--text-strong);
+}
+
+.post p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 860px) {
+  .hero-grid,
+  .product,
+  .posts {
+    grid-template-columns: 1fr;
+  }
+  .product.reverse .product-media {
+    order: 0;
+  }
+  .feature-list {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    min-height: 280px;
+    margin-top: 30px;
+  }
+}

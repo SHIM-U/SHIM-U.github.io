@@ -1,0 +1,160 @@
+/* =====================================================================
+   themes.css — 四套主题变量 + 平滑切换过渡
+   主题：极简暗黑 / 清晰浅蓝 / 赛博朋克 / 暖色日落
+   切换时通过 View Transitions 实现圆形"浮现"过渡，并配合颜色过渡。
+   ===================================================================== */
+
+/* ---------- 通用变量（可被各主题覆盖） ---------- */
+:root {
+  --radius-sm: 10px;
+  --radius: 18px;
+  --radius-lg: 28px;
+  --maxw: 1180px;
+  --nav-h: 68px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* 默认（极简暗黑）兜底 */
+  --bg: #0a0a0c;
+  --bg-grad: radial-gradient(circle at 20% 8%, #15151a 0%, #0a0a0c 60%);
+  --surface: #141417;
+  --surface-2: #1c1c21;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #ededf0;
+  --text-muted: #9a9aa3;
+  --text-strong: #ffffff;
+  --accent: #f2f2f5;
+  --accent-2: #b9b9c2;
+  --accent-contrast: #0a0a0c;
+  --gradient: linear-gradient(135deg, #ffffff 0%, #9a9aa3 100%);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --nav-bg: rgba(15, 15, 18, 0.6);
+  --glow: 0 0 0 transparent;
+}
+
+/* ---------- 主题 1：极简暗黑 ---------- */
+[data-theme='minimal-dark'] {
+  --bg: #0a0a0c;
+  --bg-grad: radial-gradient(circle at 20% 8%, #15151a 0%, #0a0a0c 60%);
+  --surface: #141417;
+  --surface-2: #1c1c21;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #ededf0;
+  --text-muted: #9a9aa3;
+  --text-strong: #ffffff;
+  --accent: #f2f2f5;
+  --accent-2: #b9b9c2;
+  --accent-contrast: #0a0a0c;
+  --gradient: linear-gradient(135deg, #ffffff 0%, #9a9aa3 100%);
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  --nav-bg: rgba(15, 15, 18, 0.6);
+  --glow: 0 0 0 transparent;
+}
+
+/* ---------- 主题 2：清晰浅蓝 ---------- */
+[data-theme='light-blue'] {
+  --bg: #eef4ff;
+  --bg-grad: radial-gradient(circle at 15% 10%, #ffffff 0%, #e3edff 55%, #d6e4ff 100%);
+  --surface: #ffffff;
+  --surface-2: #f3f7ff;
+  --border: rgba(30, 80, 180, 0.12);
+  --text: #143a66;
+  --text-muted: #5f7ba6;
+  --text-strong: #0b2545;
+  --accent: #2f7bf6;
+  --accent-2: #57a0ff;
+  --accent-contrast: #ffffff;
+  --gradient: linear-gradient(135deg, #2f7bf6 0%, #57a0ff 100%);
+  --shadow: 0 12px 40px rgba(47, 123, 246, 0.18);
+  --nav-bg: rgba(255, 255, 255, 0.7);
+  --glow: 0 0 0 transparent;
+}
+
+/* ---------- 主题 3：赛博朋克 ---------- */
+[data-theme='cyberpunk'] {
+  --bg: #07021a;
+  --bg-grad:
+    radial-gradient(circle at 82% 0%, #2a0a4a 0%, #07021a 55%),
+    radial-gradient(circle at 0% 92%, #04243f 0%, transparent 52%);
+  --surface: #120a2e;
+  --surface-2: #1a0f3d;
+  --border: rgba(255, 46, 151, 0.30);
+  --text: #e9e6ff;
+  --text-muted: #9d92d6;
+  --text-strong: #ffffff;
+  --accent: #ff2e97;
+  --accent-2: #05d9e8;
+  --accent-contrast: #07021a;
+  --gradient: linear-gradient(135deg, #ff2e97 0%, #05d9e8 100%);
+  --shadow: 0 10px 40px rgba(255, 46, 151, 0.25);
+  --nav-bg: rgba(18, 10, 46, 0.6);
+  --glow: 0 0 24px rgba(255, 46, 151, 0.45);
+}
+
+/* ---------- 主题 4：暖色日落 ---------- */
+[data-theme='warm-sunset'] {
+  --bg: #fff3e9;
+  --bg-grad:
+    radial-gradient(circle at 82% 8%, #ffe3c4 0%, #fff3e9 50%),
+    radial-gradient(circle at 8% 92%, #ffd0b8 0%, transparent 55%);
+  --surface: #fffaf5;
+  --surface-2: #fff0e6;
+  --border: rgba(214, 120, 60, 0.18);
+  --text: #5a2e16;
+  --text-muted: #a9744f;
+  --text-strong: #3d1c0c;
+  --accent: #ff7a45;
+  --accent-2: #ffb347;
+  --accent-contrast: #ffffff;
+  --gradient: linear-gradient(135deg, #ff7a45 0%, #ffb347 100%);
+  --shadow: 0 12px 40px rgba(255, 122, 69, 0.22);
+  --nav-bg: rgba(255, 250, 245, 0.7);
+  --glow: 0 0 0 transparent;
+}
+
+/* ---------- 切换时统一做颜色过渡（仅切换瞬间启用，避免干扰 hover） ---------- */
+.theme-anim,
+.theme-anim *,
+.theme-anim *::before,
+.theme-anim *::after {
+  transition:
+    background-color 0.5s var(--ease),
+    border-color 0.5s var(--ease),
+    color 0.5s var(--ease),
+    box-shadow 0.5s var(--ease),
+    fill 0.5s var(--ease) !important;
+}
+
+/* ---------- View Transitions：圆形"浮现"过渡 ---------- */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+  animation: theme-reveal 0.6s var(--ease);
+}
+
+@keyframes theme-reveal {
+  from {
+    clip-path: circle(0% at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+  to {
+    clip-path: circle(150% at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-new(root) {
+    animation: none;
+  }
+  .theme-anim,
+  .theme-anim * {
+    transition: none !important;
+  }
+}
