@@ -173,18 +173,20 @@ ul {
 .theme-dot::after {
   content: attr(data-label);
   position: absolute;
-  bottom: calc(100% + 8px);
+  top: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
   font-size: 0.7rem;
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: 6px;
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text);
+  box-shadow: var(--shadow);
   opacity: 0;
   pointer-events: none;
+  z-index: 60;
   transition: opacity 0.2s;
 }
 
@@ -271,6 +273,15 @@ ul {
 
 .btn-ghost:hover {
   border-color: var(--accent);
+}
+
+/* 按钮悬浮：轻微上浮 + 阴影（替代原来的磁吸跟随光标） */
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
 }
 
 /* ---------- 页脚 ---------- */

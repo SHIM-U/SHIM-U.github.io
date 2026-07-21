@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="小崔的个人博客网站 —— 记录与创造，展示贪吃蛇小游戏 App 与 AI Chat Hub 多模型对话中心，支持四套主题自由切换。" />
+  <meta name="description" content="小崔的个人博客网站 —— 记录与创造，展示贪吃蛇小游戏 App 与 AI Chat Hub 多模型对话中心，支持五套主题自由切换。" />
   <title>小崔的个人博客网站 · 产品与博客</title>
   <script>
     (function () {
@@ -32,8 +32,9 @@
         <a href="#about">关于</a>
         <div class="theme-switch" role="group" aria-label="主题切换">
           <button class="theme-dot" data-theme="minimal-dark" data-label="极简暗黑" aria-pressed="true" title="极简暗黑"></button>
-          <button class="theme-dot" data-theme="light-blue" data-label="清晰浅蓝" aria-pressed="false" title="清晰浅蓝"></button>
+          <button class="theme-dot" data-theme="minimal-gray" data-label="极简灰白" aria-pressed="false" title="极简灰白"></button>
           <button class="theme-dot" data-theme="cyberpunk" data-label="赛博朋克" aria-pressed="false" title="赛博朋克"></button>
+          <button class="theme-dot" data-theme="light-blue" data-label="清晰浅蓝" aria-pressed="false" title="清晰浅蓝"></button>
           <button class="theme-dot" data-theme="warm-sunset" data-label="暖色日落" aria-pressed="false" title="暖色日落"></button>
         </div>
       </nav>
@@ -52,7 +53,7 @@
         <div class="hero-copy">
           <span class="eyebrow hero-anim" style="--d:.05s">个人博客 · 产品展示</span>
           <h1 class="hero-anim" style="--d:.15s">记录与创造<br /><span class="gradient-text">把想法做成产品</span></h1>
-          <p class="lead hero-anim" style="--d:.28s">欢迎来到小崔的个人博客网站。这里收录我亲手做的小工具：经典贪吃蛇 App，以及聚合多模型对话的 AI Chat Hub。四套主题随心切换，暗黑、浅蓝、赛博、日落，总有一款合你眼缘。</p>
+          <p class="lead hero-anim" style="--d:.28s">欢迎来到小崔的个人博客网站。这里收录我亲手做的小工具：经典贪吃蛇 App，以及聚合多模型对话的 AI Chat Hub。五套主题随心切换，极简暗黑、极简灰白、赛博朋克、清晰浅蓝、暖色日落，总有一款合你眼缘。</p>
           <div class="hero-cta hero-anim" style="--d:.4s">
             <a href="#products" class="btn btn-primary magnetic">浏览产品</a>
             <a href="#blog" class="btn btn-ghost magnetic">读读博客</a>
@@ -161,18 +162,28 @@
       </div>
     </section>
 
-    <!-- ============ 关于 ============ -->
+    <!-- ============ 关于 + 联系 ============ -->
     <section class="section" id="about">
       <div class="container">
-        <div class="card reveal" style="display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between;">
-          <div style="flex:1 1 320px;">
+        <div class="about-grid">
+          <div class="card reveal">
             <span class="eyebrow">关于我</span>
             <h2 style="color:var(--text-strong);font-size:clamp(1.6rem,3.5vw,2.2rem);">小崔 · 独立开发者</h2>
             <p class="text-muted" style="margin-top:12px;">喜欢把脑中的小点子变成能握在手里的产品。这里是我作品的展示窗口，也是记录过程的博客。如果某个产品帮到了你，那便是它最大的意义。</p>
+            <div class="contact-row" style="margin-top:22px;">
+              <a href="#products" class="btn btn-ghost">看看产品</a>
+              <a href="https://aichathub-428.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary">聊聊 AI</a>
+            </div>
           </div>
-          <div style="flex:0 0 auto;display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="#products" class="btn btn-ghost magnetic">看看产品</a>
-            <a href="https://aichathub-428.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary magnetic">聊聊 AI</a>
+
+          <div class="card contact-card reveal" style="--d:.1s">
+            <span class="eyebrow">联系方式</span>
+            <h3 style="color:var(--text-strong);font-size:clamp(1.4rem,3vw,1.9rem);">欢迎随时联系我</h3>
+            <p class="text-muted" style="margin:10px 0 18px;">无论是合作、反馈，还是单纯想聊聊，都欢迎来信。我通常会尽快回复。</p>
+            <div class="contact-row">
+              <a href="mailto:2191162955@qq.com" class="btn btn-primary">✉ 2191162955@qq.com</a>
+              <button class="btn btn-ghost" id="copyMail" data-mail="2191162955@qq.com">复制邮箱</button>
+            </div>
           </div>
         </div>
       </div>
@@ -183,7 +194,7 @@
   <footer class="site-footer reveal">
     <div class="container footer-inner">
       <span>© 2026 小崔的个人博客网站 · 用 ❤️ 与代码搭建</span>
-      <span>主题：极简暗黑 / 清晰浅蓝 / 赛博朋克 / 暖色日落</span>
+      <span>主题：极简暗黑 / 极简灰白 / 赛博朋克 / 清晰浅蓝 / 暖色日落</span>
     </div>
   </footer>
 

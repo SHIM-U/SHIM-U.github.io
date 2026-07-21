@@ -251,6 +251,21 @@
   display: block;
 }
 
+/* ---------- 关于 + 联系方式 ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.contact-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 /* ---------- 博客文章 ---------- */
 .posts {
   display: grid;
@@ -306,6 +321,9 @@
     aspect-ratio: auto;
   }
   .shots {
+    grid-template-columns: 1fr;
+  }
+  .about-grid {
     grid-template-columns: 1fr;
   }
 }

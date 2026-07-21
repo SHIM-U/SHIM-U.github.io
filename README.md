@@ -1,7 +1,7 @@
 # 小崔的个人博客网站 · 产品展示站
 
 一个纯静态（HTML / CSS / JS，零构建、零依赖）的个人站点，用于展示产品并提供外部访问。
-支持 **四套主题** 平滑切换，并已在 GitHub Pages 部署流程中预设，推送即上线。
+支持 **五套主题** 平滑切换，并已在 GitHub Pages 部署流程中预设，推送即上线。
 
 ## ✨ 核心功能
 
@@ -9,7 +9,7 @@
 | --- | --- |
 | 🐍 贪吃蛇小游戏 App | 产品介绍 + 真实游戏截图 + **APK 下载** |
 | 💬 AI Chat Hub | 产品介绍 + **直接访问入口**（https://aichathub-428.netlify.app/） |
-| 🎨 四主题切换 | 极简暗黑 / 清晰浅蓝 / 赛博朋克 / 暖色日落，圆形"浮现"过渡 |
+| 🎨 五主题切换 | 极简暗黑 / 极简灰白 / 赛博朋克 / 清晰浅蓝 / 暖色日落，圆形"浮现"过渡 |
 | 📝 博客随笔 | 轻量文章占位，呼应"博客"定位 |
 | 📱 响应式 | 桌面 / 移动端自适应，含移动端菜单 |
 | 🌫️ 浮现动画 | 首屏载入 + 滚动进入视口的渐显/缩放/侧滑/模糊浮现动画 |
@@ -21,7 +21,7 @@ personal-blog/
 ├── .github/workflows/deploy.yml   # GitHub Pages 自动部署
 ├── index.html                     # 站点主页面（语义化结构）
 ├── css/
-│   ├── themes.css                 # 四套主题变量 + 切换过渡（View Transitions）
+│   ├── themes.css                 # 五套主题变量 + 切换过渡（View Transitions）
 │   ├── base.css                   # 重置 / 玻璃导航 / 卡片 / 按钮
 │   ├── animations.css             # 载入与滚动浮现动画（含缩放、侧滑、模糊变体）
 │   └── layout.css                 # 首屏 / 产品 / 博客布局
@@ -63,7 +63,7 @@ personal-blog/
 
 ## 🎨 主题说明
 
-- 主题状态保存在 `localStorage['blog-theme']`，刷新后保持。
+- 主题状态保存在 `localStorage['blog-theme']`，刷新后保持。默认主题为**极简暗黑**。
 - 切换时优先使用浏览器 **View Transitions API** 做圆形"浮现"过渡；
   不支持的浏览器自动降级为颜色过渡（同样平滑）。
 - 想新增主题：在 `css/themes.css` 增加 `[data-theme='xxx']` 变量块，

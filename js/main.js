@@ -1,5 +1,6 @@
 /* =====================================================================
-   main.js — 移动端菜单 + 磁吸按钮
+   main.js — 移动端菜单 + 复制邮箱
+   （按钮悬浮效果改由 CSS .btn:hover 处理，不再跟随光标）
    ===================================================================== */
 (function () {
   'use strict';
@@ -22,25 +23,28 @@
     });
   }
 
-  /* ---------- 磁吸按钮 ---------- */
-  var reduceMotion = window.matchMedia &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (reduceMotion) return;
-
-  var magnets = Array.prototype.slice.call(document.querySelectorAll('.magnetic'));
-
-  magnets.forEach(function (el) {
-    var strength = 0.3;
-    el.addEventListener('mousemove', function (e) {
-      var rect = el.getBoundingClientRect();
-      var mx = e.clientX - rect.left - rect.width / 2;
-      var my = e.clientY - rect.top - rect.height / 2;
-      el.style.transform =
-        'translate(' + (mx * strength) + 'px,' + (my * strength) + 'px) scale(1.04)';
+  /* ---------- 复制邮箱 ---------- */
+  var copyBtn = document.getElementById('copyMail');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      var mail = copyBtn.getAttribute('data-mail') || '';
+      var done = function () {
+        var old = copyBtn.textContent;
+        copyBtn.textContent = '已复制 ✓';
+        window.setTimeout(function () {
+          copyBtn.textContent = old;
+        }, 1500);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(mail).then(done).catch(function () {});
+      } else {
+        var ta = document.createElement('textarea');
+        ta.value = mail;
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
     });
-    el.addEventListener('mouseleave', function () {
-      el.style.transform = '';
-    });
-  });
+  }
 })();

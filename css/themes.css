@@ -50,7 +50,26 @@
   --glow: 0 0 0 transparent;
 }
 
-/* ---------- 主题 2：清晰浅蓝 ---------- */
+/* ---------- 主题 2：极简灰白 ---------- */
+[data-theme='minimal-gray'] {
+  --bg: #f3f4f6;
+  --bg-grad: radial-gradient(circle at 18% 10%, #ffffff 0%, #eceef1 55%, #e2e5ea 100%);
+  --surface: #ffffff;
+  --surface-2: #eceef1;
+  --border: rgba(20, 24, 33, 0.10);
+  --text: #2b2f36;
+  --text-muted: #6b7280;
+  --text-strong: #0b0d10;
+  --accent: #2b2f36;
+  --accent-2: #9aa1ab;
+  --accent-contrast: #ffffff;
+  --gradient: linear-gradient(135deg, #3a3f47 0%, #9aa1ab 100%);
+  --shadow: 0 12px 40px rgba(20, 24, 33, 0.10);
+  --nav-bg: rgba(255, 255, 255, 0.72);
+  --glow: 0 0 0 transparent;
+}
+
+/* ---------- 主题 3：清晰浅蓝 ---------- */
 [data-theme='light-blue'] {
   --bg: #eef4ff;
   --bg-grad: radial-gradient(circle at 15% 10%, #ffffff 0%, #e3edff 55%, #d6e4ff 100%);
@@ -69,7 +88,7 @@
   --glow: 0 0 0 transparent;
 }
 
-/* ---------- 主题 3：赛博朋克 ---------- */
+/* ---------- 主题 4：赛博朋克 ---------- */
 [data-theme='cyberpunk'] {
   --bg: #07021a;
   --bg-grad:
@@ -90,7 +109,7 @@
   --glow: 0 0 24px rgba(255, 46, 151, 0.45);
 }
 
-/* ---------- 主题 4：暖色日落 ---------- */
+/* ---------- 主题 5：暖色日落 ---------- */
 [data-theme='warm-sunset'] {
   --bg: #fff3e9;
   --bg-grad:

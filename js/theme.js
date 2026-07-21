@@ -1,10 +1,10 @@
 /* =====================================================================
-   theme.js — 四主题切换（持久化 + View Transitions 圆形浮现过渡）
+   theme.js — 五主题切换（持久化 + View Transitions 圆形浮现过渡）
    ===================================================================== */
 (function () {
   'use strict';
 
-  var THEMES = ['minimal-dark', 'light-blue', 'cyberpunk', 'warm-sunset'];
+  var THEMES = ['minimal-dark', 'minimal-gray', 'cyberpunk', 'light-blue', 'warm-sunset'];
   var STORE_KEY = 'blog-theme';
   var root = document.documentElement;
   var dots = Array.prototype.slice.call(document.querySelectorAll('.theme-dot'));
