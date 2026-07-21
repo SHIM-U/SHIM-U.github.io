@@ -8,14 +8,36 @@
   transform: translateY(26px);
   transition:
     opacity 0.7s var(--ease),
-    transform 0.7s var(--ease);
+    transform 0.7s var(--ease),
+    filter 0.7s var(--ease);
   transition-delay: var(--d, 0s);
-  will-change: opacity, transform;
+  will-change: opacity, transform, filter;
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: none;
+  filter: none;
+}
+
+/* 变体：缩放浮现 */
+.reveal-scale {
+  transform: scale(0.94);
+}
+
+/* 变体：左侧滑入 */
+.reveal-left {
+  transform: translateX(-30px);
+}
+
+/* 变体：右侧滑入 */
+.reveal-right {
+  transform: translateX(30px);
+}
+
+/* 变体：模糊浮现 */
+.reveal-blur {
+  filter: blur(8px);
 }
 
 /* 首屏 hero 载入动画（页面加载即播放，不依赖滚动） */
@@ -57,9 +79,14 @@
 
 @media (prefers-reduced-motion: reduce) {
   .reveal,
+  .reveal-scale,
+  .reveal-left,
+  .reveal-right,
+  .reveal-blur,
   .hero-anim {
     opacity: 1 !important;
     transform: none !important;
+    filter: none !important;
     animation: none !important;
   }
   .float,

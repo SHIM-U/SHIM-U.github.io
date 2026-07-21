@@ -62,8 +62,17 @@
   border: 1px solid var(--border);
   background: var(--surface);
   box-shadow: var(--shadow);
-  padding: 16px;
+  padding: 12px;
   transform: rotate(-2deg);
+  overflow: hidden;
+  aspect-ratio: 9 / 18;
+}
+
+.hero-device img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: calc(var(--radius-lg) - 10px);
 }
 
 /* 装饰圆点 */
@@ -107,6 +116,7 @@
   padding: 6px 12px;
   border-radius: 999px;
   margin-bottom: 18px;
+  width: fit-content;
 }
 
 .product h3 {
@@ -162,11 +172,13 @@
   color: var(--text-muted);
 }
 
-/* 截图画廊 */
+/* 截图画廊：适配真实截图的不同比例 */
 .shots {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 14px;
+  align-items: stretch;
 }
 
 .shot {
@@ -185,29 +197,61 @@
 
 .shot img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.shot.wide {
-  grid-column: 1 / -1;
+.shot.tall {
+  grid-row: 1 / span 2;
+  aspect-ratio: 9 / 16;
 }
 
-/* 产品媒体（AI Hub 用 SVG 插画） */
+/* 画廊中的高亮信息卡 */
+.shot-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 20px;
+  border-radius: var(--radius);
+  background: var(--gradient);
+  color: var(--accent-contrast);
+  box-shadow: var(--shadow);
+  min-height: 100%;
+}
+
+.shot-card .big {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.shot-card .label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+/* 产品媒体（AI Hub） */
 .media-frame {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   background: var(--surface);
   box-shadow: var(--shadow);
-  padding: 22px;
+  padding: 14px;
   overflow: hidden;
 }
 
 .media-frame img {
   width: 100%;
-  border-radius: var(--radius-sm);
+  height: auto;
+  border-radius: calc(var(--radius-lg) - 10px);
+  display: block;
 }
 
-/* ---------- 博客文章（轻量占位，呼应"博客"定位） ---------- */
+/* ---------- 博客文章 ---------- */
 .posts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -256,5 +300,12 @@
   .hero-visual {
     min-height: 280px;
     margin-top: 30px;
+  }
+  .shot.tall {
+    grid-row: auto;
+    aspect-ratio: auto;
+  }
+  .shots {
+    grid-template-columns: 1fr;
   }
 }

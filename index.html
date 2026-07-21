@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="个人博客与产品展示站 —— 贪吃蛇小游戏 App 与 AI Chat Hub 多模型对话中心，支持四套主题自由切换。" />
-  <title>八哥实验室 · 产品与博客</title>
+  <meta name="description" content="小崔的个人博客网站 —— 记录与创造，展示贪吃蛇小游戏 App 与 AI Chat Hub 多模型对话中心，支持四套主题自由切换。" />
+  <title>小崔的个人博客网站 · 产品与博客</title>
   <script>
     (function () {
       try {
@@ -23,7 +23,7 @@
   <!-- ============ 导航 ============ -->
   <header class="site-nav">
     <div class="nav-inner">
-      <a href="#top" class="brand"><span class="logo-dot"></span>八哥实验室</a>
+      <a href="#top" class="brand reveal"><span class="logo-dot"></span>小崔的个人博客网站</a>
 
       <nav class="nav-links" id="navLinks">
         <a href="#top">首页</a>
@@ -50,9 +50,9 @@
       <span class="blob b2"></span>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow hero-anim" style="--d:.05s">个人实验室 · 产品展示</span>
-          <h1 class="hero-anim" style="--d:.15s">把好玩的想法<br /><span class="gradient-text">做成能用的产品</span></h1>
-          <p class="lead hero-anim" style="--d:.28s">这里收录我亲手打造的小工具：经典贪吃蛇 App，以及聚合多模型对话的 AI Chat Hub。四套主题随心切换，暗黑、浅蓝、赛博、日落，总有一款合你眼缘。</p>
+          <span class="eyebrow hero-anim" style="--d:.05s">个人博客 · 产品展示</span>
+          <h1 class="hero-anim" style="--d:.15s">记录与创造<br /><span class="gradient-text">把想法做成产品</span></h1>
+          <p class="lead hero-anim" style="--d:.28s">欢迎来到小崔的个人博客网站。这里收录我亲手做的小工具：经典贪吃蛇 App，以及聚合多模型对话的 AI Chat Hub。四套主题随心切换，暗黑、浅蓝、赛博、日落，总有一款合你眼缘。</p>
           <div class="hero-cta hero-anim" style="--d:.4s">
             <a href="#products" class="btn btn-primary magnetic">浏览产品</a>
             <a href="#blog" class="btn btn-ghost magnetic">读读博客</a>
@@ -61,8 +61,8 @@
 
         <div class="hero-visual hero-anim" style="--d:.5s">
           <span class="hero-orb float"></span>
-          <div class="hero-device">
-            <img src="assets/images/snake-1.svg" alt="贪吃蛇游戏界面预览" loading="lazy" />
+          <div class="hero-device reveal reveal-scale" style="--d:.6s">
+            <img src="assets/images/snake-game.png" alt="贪吃蛇游戏实战画面" loading="eager" />
           </div>
         </div>
       </div>
@@ -78,48 +78,56 @@
         </div>
 
         <!-- 产品 1：贪吃蛇 App -->
-        <article class="product reveal">
-          <div class="product-info">
-            <span class="product-tag">🐍 移动端 App</span>
+        <article class="product">
+          <div class="product-info reveal reveal-left" style="--d:.05s">
+            <span class="product-tag reveal" style="--d:.05s">🐍 移动端 App</span>
             <h3>贪吃蛇小游戏</h3>
             <p class="desc">一款轻量、护眼、完全离线的经典贪吃蛇。滑动或方向键操控，碎片时间随时来一局，最高分自动保存在本地。</p>
             <ul class="feature-list">
-              <li class="feature"><span class="ic">🎮</span><span><span class="ft-title">顺手操控</span><br /><span class="ft-desc">方向键 / 滑动双模式</span></span></li>
-              <li class="feature"><span class="ic">⚡</span><span><span class="ft-title">多档难度</span><br /><span class="ft-desc">速度随段位自适应</span></span></li>
-              <li class="feature"><span class="ic">🏆</span><span><span class="ft-title">本地排行</span><br /><span class="ft-desc">最高分自动存档</span></span></li>
-              <li class="feature"><span class="ic">🌙</span><span><span class="ft-title">护眼界面</span><br /><span class="ft-desc">暗色调，久玩不累</span></span></li>
+              <li class="feature reveal" style="--d:.1s"><span class="ic">🎮</span><span><span class="ft-title">顺手操控</span><br /><span class="ft-desc">方向键 / 滑动双模式</span></span></li>
+              <li class="feature reveal" style="--d:.18s"><span class="ic">⚡</span><span><span class="ft-title">多档难度</span><br /><span class="ft-desc">速度随段位自适应</span></span></li>
+              <li class="feature reveal" style="--d:.26s"><span class="ic">🏆</span><span><span class="ft-title">本地排行</span><br /><span class="ft-desc">最高分自动存档</span></span></li>
+              <li class="feature reveal" style="--d:.34s"><span class="ic">🌙</span><span><span class="ft-title">护眼界面</span><br /><span class="ft-desc">暗色调，久玩不累</span></span></li>
             </ul>
-            <a href="assets/downloads/snake.apk" download class="btn btn-primary magnetic">⬇ 下载 APK</a>
+            <a href="assets/downloads/snake.apk" download class="btn btn-primary magnetic reveal" style="--d:.42s">⬇ 下载 APK</a>
           </div>
 
-          <div class="product-media">
+          <div class="product-media reveal reveal-right" style="--d:.15s">
             <div class="shots">
-              <div class="shot"><img src="assets/images/snake-1.svg" alt="贪吃蛇游戏进行中截图" loading="lazy" /></div>
-              <div class="shot"><img src="assets/images/snake-2.svg" alt="贪吃蛇开始菜单截图" loading="lazy" /></div>
-              <div class="shot wide"><img src="assets/images/snake-3.svg" alt="贪吃蛇结算与排行榜截图" loading="lazy" /></div>
+              <div class="shot tall reveal reveal-scale" style="--d:.2s">
+                <img src="assets/images/snake-game.png" alt="贪吃蛇游戏实战画面" loading="lazy" />
+              </div>
+              <div class="shot reveal reveal-scale" style="--d:.3s">
+                <img src="assets/images/snake-menu.png" alt="贪吃蛇皮肤与模式选择界面" loading="lazy" />
+              </div>
+              <div class="shot-card reveal" style="--d:.4s">
+                <span class="big">4</span>
+                <span class="label">套主题皮肤</span>
+                <span class="label">无尽 / 关卡 / 挑战模式</span>
+              </div>
             </div>
           </div>
         </article>
 
         <!-- 产品 2：AI Chat Hub -->
-        <article class="product reverse reveal">
-          <div class="product-info">
-            <span class="product-tag">💬 网页应用</span>
+        <article class="product reverse">
+          <div class="product-media reveal reveal-left" style="--d:.05s">
+            <div class="media-frame reveal reveal-scale" style="--d:.1s">
+              <img src="assets/images/aichat-hub.png" alt="AI Chat Hub 真实对话界面" loading="lazy" />
+            </div>
+          </div>
+
+          <div class="product-info reveal reveal-right" style="--d:.1s">
+            <span class="product-tag reveal" style="--d:.12s">💬 网页应用</span>
             <h3>AI Chat Hub</h3>
             <p class="desc">一个把多个大模型聚到一起的对话中心。免登录、开箱即用，流式响应低延迟，多会话并行不串味。</p>
             <ul class="feature-list">
-              <li class="feature"><span class="ic">🧠</span><span><span class="ft-title">多模型入口</span><br /><span class="ft-desc">一站式切换对话模型</span></span></li>
-              <li class="feature"><span class="ic">🧵</span><span><span class="ft-title">多会话</span><br /><span class="ft-desc">上下文互不干扰</span></span></li>
-              <li class="feature"><span class="ic">⚡</span><span><span class="ft-title">流式响应</span><br /><span class="ft-desc">打字机般即时输出</span></span></li>
-              <li class="feature"><span class="ic">🔓</span><span><span class="ft-title">免登录</span><br /><span class="ft-desc">打开即用，零门槛</span></span></li>
+              <li class="feature reveal" style="--d:.18s"><span class="ic">🧠</span><span><span class="ft-title">多模型入口</span><br /><span class="ft-desc">一站式切换对话模型</span></span></li>
+              <li class="feature reveal" style="--d:.26s"><span class="ic">🧵</span><span><span class="ft-title">多会话</span><br /><span class="ft-desc">上下文互不干扰</span></span></li>
+              <li class="feature reveal" style="--d:.34s"><span class="ic">⚡</span><span><span class="ft-title">流式响应</span><br /><span class="ft-desc">打字机般即时输出</span></span></li>
+              <li class="feature reveal" style="--d:.42s"><span class="ic">🔓</span><span><span class="ft-title">免登录</span><br /><span class="ft-desc">打开即用，零门槛</span></span></li>
             </ul>
-            <a href="https://aichathub-428.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary magnetic">↗ 直接访问</a>
-          </div>
-
-          <div class="product-media">
-            <div class="media-frame">
-              <img src="assets/images/aichat.svg" alt="AI Chat Hub 界面示意" loading="lazy" />
-            </div>
+            <a href="https://aichathub-428.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary magnetic reveal" style="--d:.5s">↗ 直接访问</a>
           </div>
         </article>
       </div>
@@ -134,17 +142,17 @@
           <p>记录开发过程里的踩坑、技巧与一点小思考。</p>
         </div>
         <div class="posts">
-          <article class="post card reveal" style="--d:.05s">
+          <article class="post card reveal reveal-scale" style="--d:.05s">
             <span class="post-meta">前端 · 2026-07</span>
             <h4>用纯 CSS 变量实现四主题切换</h4>
             <p>不依赖框架，仅靠 data-theme 与 View Transitions，就能做出丝滑的圆形"浮现"过渡。</p>
           </article>
-          <article class="post card reveal" style="--d:.15s">
+          <article class="post card reveal reveal-scale" style="--d:.15s">
             <span class="post-meta">部署 · 2026-07</span>
             <h4>一次提交，全球可访问：GitHub Pages</h4>
             <p>静态站点 + GitHub Actions，推送即上线，访客无需任何环境即可打开。</p>
           </article>
-          <article class="post card reveal" style="--d:.25s">
+          <article class="post card reveal reveal-scale" style="--d:.25s">
             <span class="post-meta">产品 · 2026-06</span>
             <h4>贪吃蛇 App 开发手记</h4>
             <p>从一格一格移动到手感优化，聊聊一个小游戏里那些不起眼却重要的细节。</p>
@@ -159,7 +167,7 @@
         <div class="card reveal" style="display:flex;flex-wrap:wrap;gap:28px;align-items:center;justify-content:space-between;">
           <div style="flex:1 1 320px;">
             <span class="eyebrow">关于我</span>
-            <h2 style="color:var(--text-strong);font-size:clamp(1.6rem,3.5vw,2.2rem);">八哥 · 独立开发者</h2>
+            <h2 style="color:var(--text-strong);font-size:clamp(1.6rem,3.5vw,2.2rem);">小崔 · 独立开发者</h2>
             <p class="text-muted" style="margin-top:12px;">喜欢把脑中的小点子变成能握在手里的产品。这里是我作品的展示窗口，也是记录过程的博客。如果某个产品帮到了你，那便是它最大的意义。</p>
           </div>
           <div style="flex:0 0 auto;display:flex;gap:12px;flex-wrap:wrap;">
@@ -172,9 +180,9 @@
   </main>
 
   <!-- ============ 页脚 ============ -->
-  <footer class="site-footer">
+  <footer class="site-footer reveal">
     <div class="container footer-inner">
-      <span>© 2026 八哥实验室 · 用 ❤️ 与代码搭建</span>
+      <span>© 2026 小崔的个人博客网站 · 用 ❤️ 与代码搭建</span>
       <span>主题：极简暗黑 / 清晰浅蓝 / 赛博朋克 / 暖色日落</span>
     </div>
   </footer>
