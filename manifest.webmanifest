@@ -1,0 +1,16 @@
+{
+  "name": "小崔的个人博客网站",
+  "short_name": "小崔博客",
+  "description": "记录与创造 —— 贪吃蛇小游戏 App、AI Chat Hub 多模型对话中心，五套主题自由切换。",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
